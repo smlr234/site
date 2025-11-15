@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Catálogo de Produtos</title>
+  <style>
+  
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #ffffff;
+    }
+
+    header {
+      background: #a7c957;
+      color: #fff;
+      padding: 15px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    header h1 {
+      margin: 0;
+    }
+
+    nav ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      gap: 15px;
+    }
+
+    nav ul li a {
+      color: #a59999; /* Cor branca só para o menu superior */
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    nav ul li a:hover {
+      text-decoration: underline;
+    }
+
+    /* --- Layout da página de produtos --- */
+    .catalogo-layout {
+      display: flex;
+      padding: 20px;
+    }
+
+    /* Barra lateral */
+    .categorias {
+      width: 200px;
+      margin-right: 20px;
+      background: #90b43a;
+      padding: 15px;
+      border-radius: 8px;
+    }
+
+    .categorias h3 {
+      margin-top: 0;
+      color: #ccc;
+    }
+
+    .categorias ul {
+      list-style: none;
+      padding: 0;
+      color: #fff;
+    }
+
+    .categorias li {
+      margin-bottom: 10px;
+    }
+
+    .categorias a {
+      text-decoration: none;
+      color: #333; /* Cor das categorias alterada */
+      font-weight: bold;
+    }
+
+    .categorias a:hover {
+      color: #707070;
+    }
+
+    /* Conteúdo principal */
+    .produtos-categorias {
+      flex: 1;
+    }
+
+    .categoria {
+      margin-bottom: 40px;
+    }
+
+    .categoria h2 {
+      margin-bottom: 15px;
+      border-bottom: 2px solid #90b43a;
+      padding-bottom: 5px;
+    }
+
+    /* Grid de produtos */
+    .produtos-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 20px;
+    }
+
+    .produto {
+      border: 1px solid #ccc;
+      padding: 15px;
+      text-align: center;
+      border-radius: 8px;
+      background: #fff;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .produto:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+
+    .produto img {
+      max-width: 100%;
+      border-radius: 6px;
+      margin-bottom: 10px;
+    }
+
+    .produto h3 {
+      margin: 10px 0;
+      font-size: 1.1em;
+      color: #000; /* Títulos dos produtos visíveis */
+    }
+
+    .preco {
+      font-weight: bold;
+      color: #333;
+    }
+
+    /* Links gerais — agora respeitam a cor local (menu, categorias, produtos, etc.) */
+    a, a:visited {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    .logo img {
+            height: 60px;        /* Ajuste o tamanho do logo */
+            width: auto;         /* Mantém proporção */
+            object-fit: contain;
+            margin-top: 3px;
+        }
+
+        body{
+            font-family: Arial, Helvetica, sans-serif;
+        }
+  </style>
+</head>
+<body>
+  <!-- Cabeçalho -->
+  <header>
+    <div class="logo">
+      <img src="logoatualizada.png">
+    </div>
+    <nav>
+      <ul>
+        <li><a href="site para o colégio.html">Início</a></li>
+        <li><a href="produtos.html">Produtos</a></li>
+        <li><a href="Sobre.html">Sobre</a></li>
+        <li><a href="contato.html">Contato</a></li>
+        <li><a href="carrinho.html">Carrinho 🛒</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Layout principal -->
+  <main class="catalogo-layout">
+    <!-- Barra lateral -->
+    <aside class="categorias">
+      <h3>Categorias</h3>
+      <ul>
+        <li><a href="#cat1">Categoria 1</a></li>
+        <li><a href="#cat2">Categoria 2</a></li>
+        <li><a href="#cat3">Categoria 3</a></li>
+        <li><a href="#cat4">Categoria 4</a></li>
+        <li><a href="#cat5">Categoria 5</a></li>
+      </ul>
+    </aside>
+
+    <!-- Produtos -->
+    <section class="produtos-categorias">
+      <!-- Categoria 1 -->
+      <div id="cat1" class="categoria">
+        <h2>Categoria 1</h2>
+        <div class="produtos-container">
+          <div class="produto"><a href="produto1.html"><img src="bengala.jpeg"><h3>Bengala portátil</h3><span class="preco">R$ 99,90</span></a></div>
+          <div class="produto"><a href="produto2.html"><img src="display de braile.webp"><h3>Display de braille</h3><span class="preco">R$ 149,90</span></a></div>
+          <div class="produto"><a href="produto3.html"><img src="teclado em braile.webp"><h3>Teclado em braille</h3><span class="preco">R$ 79,90</span></a></div>
+          <div class="produto"><a href="produto4.html"><img src="oculos daltonismo.webp"><h3>Óculos corretivos</h3><span class="preco">R$ 299,90</span></a></div>
+          <div class="produto"><a href="produto5.html"><img src="oculos inteligente 2.jpg"><h3>Óculos inteligente</h3><span class=" preco">R$ 429,90</span></a></div>
+        </div>
+      </div>
+
+      <!-- Categoria 2 -->
+      <div id="cat2" class="categoria">
+        <h2>Categoria 2</h2>
+        <div class="produtos-container">
+          <div class="produto"><img src="muleta.webp"><h3>Muleta adaptável</h3><span class="preco">R$ 89,90</span></div>
+          <div class="produto"><img src="cadeira de rodas.webp"><h3>Cadeira de rodas manual</h3><span class="preco">R$ 249,90</span></div>
+          <div class="produto"><img src="treinador de postura.webp"><h3>Treinador de postura</h3><span class="preco">R$ 59,90</span></div>
+          <div class="produto"><img src="proteses tibiais.webp"><h3>Próteses tibiais</h3><span class="preco">R$ 299,90</span></div>
+          <div class="produto"><img src="protese de mão.webp"><h3>Mão biônica</h3><span class="preco">R$ 129,90</span></div>
+        </div>
+      </div>
+
+      <!-- Categoria 3 -->
+      <div id="cat3" class="categoria">
+        <h2>Categoria 3</h2>
+        <div class="produtos-container">
+          <div class="produto"><img src="andador ortopedico.webp"><h3>Andador ortopédico</h3><span class="preco">R$ 149,90</span></div>
+          <div class="produto"><img src="andador tecnologico.jpg"><h3>Bengala inteligente</h3><span class="preco">R$ 159,90</span></div>
+          <div class="produto"><img src="scanner de texto.webp"><h3>Scanner de texto</h3><span class="preco">R$ 99,90</span></div>
+          <div class="produto"><img src="quadro de rotina visual.webp"><h3>Quadro de rotina visual</h3><span class="preco">R$ 49,90</span></div>
+          <div class="produto"><img src="aparelho auditivo.webp"><h3>Aparelho auditivo</h3><span class="preco">R$ 199,90</span></div>
+        </div>
+      </div>
+
+      <!-- Categoria 4 -->
+      <div id="cat4" class="categoria">
+        <h2>Categoria 4</h2>
+        <div class="produtos-container">
+          <div class="produto"><img src="https://via.placeholder.com/200"><h3>Produto 16</h3><span class="preco">R$ 99,90</span></div>
+          <div class="produto"><img src="https://via.placeholder.com/200"><h3>Produto 17</h3><span class="preco">R$ 139,90</span></div>
+          <div class="produto"><img src="https://via.placeholder.com/200"><h3>Produto 18</h3><span class="preco">R$ 79,90</span></div>
+          <div class="produto"><img src="https://via.placeholder.com/200"><h3>Produto 19</h3><span class="preco">R$ 199,90</span></div>
+          <div class="produto"><img src="https://via.placeholder.com/200"><h3>Produto 20</h3><span class="preco">R$ 149,90</span></div>
+        </div>
+      </div>
+
+      <!-- Categoria 5 -->
+      <div id="cat5" class="categoria">
+        <h2>Categoria 5</h2>
+        <div class="produtos-container">
+          <div class="produto"><img src="https://via.placeholder.com/200"><h3>Produto 21</h3><span class="preco">R$ 69,90</span></div>
+          <div class="produto"><img src="https://via.placeholder.com/200"><h3>Produto 22</h3><span class="preco">R$ 119,90</span></div>
+          <div class="produto"><img src="https://via.placeholder.com/200"><h3>Produto 23</h3><span class="preco">R$ 89,90</span></div>
+          <div class="produto"><img src="https://via.placeholder.com/200"><h3>Produto 24</h3><span class="preco">R$ 159,90</span></div>
+          <div class="produto"><img src="https://via.placeholder.com/200"><h3>Produto 25</h3><span class="preco">R$ 199,90</span></div>
+        </div>
+      </div>
+    </section>
+  </main>
+</body>
+</html>

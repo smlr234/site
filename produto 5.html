@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head><meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Produto 5 - Minha Loja</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #fafafa;
+    }
+    header {
+      background: #a7c957;
+      color: #fff;
+      padding: 15px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 15px;
+      margin: 0;
+      padding: 0;
+    }
+    nav ul li a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    nav ul li a:hover {
+      text-decoration: underline;
+    }
+    main {
+      max-width: 900px;
+      margin: 40px auto;
+      padding: 20px;
+      background: #fff;
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+    .produto-detalhe {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 30px;
+      align-items: start;
+    }
+    .produto-detalhe img {
+      width: 100%;
+      border-radius: 8px;
+    }
+    h2 {
+      margin-top: 0;
+      color: #333;
+    }
+    .preco {
+      font-size: 1.5em;
+      color: #007bff;
+      margin: 15px 0;
+    }
+    button {
+      padding: 12px 20px;
+      background: #007bff;
+      color: #fff;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      font-weight: bold;
+      transition: background 0.2s ease;
+    }
+    button:hover {
+      background: #0056b3;
+    }
+    body{
+            font-family: Arial, Helvetica, sans-serif;
+        }
+  </style>
+</head>
+<body>
+  <!-- Cabeçalho -->
+  <header>
+    <h1>Minha Loja</h1>
+    <nav>
+      <ul>
+        <li><a href="index.html#inicio">Início</a></li>
+        <li><a href="produtos.html">Produtos</a></li>
+        <li><a href="sobre.html">Sobre</a></li>
+        <li><a href="contato.html">Contato</a></li>
+        <li><a href="carrinho.html">Carrinho 🛒</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Conteúdo principal -->
+  <main>
+    <div class="produto-detalhe" data-nome="Produto 1" data-preco="99.90">
+      <img src="https://via.placeholder.com/400" alt="Produto 1">
+      <div>
+        <h2>Produto 5</h2>
+        <p class="preco">R$ 99,90</p>
+        <p>Descrição completa do Produto 1. Aqui você pode colocar todos os detalhes técnicos, materiais, tamanhos e informações adicionais.</p>
+        <button id="btn-carrinho">Adicionar ao Carrinho</button>
+      </div>
+    </div>
+  </main>
+
+  <script>
+    // Função para adicionar ao carrinho
+    const btn = document.getElementById("btn-carrinho");
+    btn.addEventListener("click", () => {
+      const produto = document.querySelector(".produto-detalhe");
+      const nome = produto.getAttribute("data-nome");
+      const preco = parseFloat(produto.getAttribute("data-preco"));
+
+      let carrinho = JSON.parse(localStorage.getItem("carrinho")) || [];
+
+      const existente = carrinho.find(item => item.nome === nome);
+      if (existente) {
+        existente.quantidade += 1;
+      } else {
+        carrinho.push({nome, preco, quantidade: 1});
+      }
+
+      localStorage.setItem("carrinho", JSON.stringify(carrinho));
+      alert(`${nome} foi adicionado ao carrinho!`);
+    });
+  </script>
+</body>
+</html>
